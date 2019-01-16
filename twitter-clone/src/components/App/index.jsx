@@ -6,9 +6,11 @@ import {
   PostStatusFilter,
   PostList,
   PostAddForm,
+  // eslint-disable-next-line
 } from 'components';
 
 import './style.css';
+import data from './data';
 
 const App = () => {
   return (
@@ -18,7 +20,7 @@ const App = () => {
         <SearchPanel />
         <PostStatusFilter />
       </div>
-      <PostList />
+      <PostList posts={data} />
       <PostAddForm />
     </div>
   );

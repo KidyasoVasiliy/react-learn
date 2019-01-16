@@ -1,0 +1,19 @@
+[{
+    "id": "keys1",
+    "label": "A",
+    "important": true
+  },
+  {
+    "id": "keys2",
+    "label": "A",
+    "important": false
+  },
+  {
+    "id": "keys3",
+    "label": "A",
+    "important": false
+  },
+  1,
+  "null",
+  "plz render me!"
+]
