@@ -1,18 +1,27 @@
 import React from 'react';
+import { Button, Input, Form } from 'reactstrap';
 
 import './style.css';
 
-export const PostAddForm = () => {
+/**
+ * Component used ReactStrap library
+ */
+export const PostAddForm = ({ handleAddPost }) => {
   return (
-    <form className="bottom-panel d-flex">
-      <input
+    <Form className="bottom-panel d-flex">
+      <Input
         type="text"
         placeholder="О чем думаете сейчас?"
-        className="form-control new-post-label"
+        className="new-post-label"
       />
-      <button type="submit" className="btn btn-outline-secondary">
+      <Button
+        outline
+        type="submit"
+        color="secondary"
+        onClick={e => handleAddPost(e, 'test')}
+      >
         Добавить
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 };

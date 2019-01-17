@@ -21,7 +21,7 @@ export class PostListItem extends Component {
   };
 
   render() {
-    const { label } = this.props;
+    const { label, handleDeletePost } = this.props;
     const { important, like } = this.state;
 
     const classNames = {
@@ -52,7 +52,11 @@ export class PostListItem extends Component {
           >
             <i className="fa fa-star" />
           </button>
-          <button className="btn-trash btn-sm" type="button">
+          <button
+            className="btn-trash btn-sm"
+            type="button"
+            onClick={handleDeletePost}
+          >
             <i className="fa fa-trash" />
           </button>
           <i className="fa fa-heart" />
