@@ -18,7 +18,38 @@ class App extends Component {
     super(props);
     this.state = {
       posts: data,
+      term: '',
+      filter: 'all',
     };
+  }
+
+  filterPost = (posts, filter) => {
+    if (filter === 'like') {
+      return posts.filter(post => post.like);
+    }
+
+    return posts;
+  }
+
+  hundleFilterSelect = (filter) => {
+    this.setState({ filter });
+  }
+
+  searchPosts = (posts, term) => {
+    if (term.length === 0) {
+      return posts;
+    }
+
+    return posts.filter((post) => {
+      if (post instanceof Object) {
+        return post.label.toLowerCase().indexOf(term) > -1;
+      }
+      return null;
+    });
+  }
+
+  hundleUpdateSearch = (term) => {
+    this.setState({ term });
   }
 
   handleDeletePost = (id) => {
@@ -27,8 +58,7 @@ class App extends Component {
     this.setState({ posts });
   }
 
-  handleAddPost = (e, post) => {
-    e.preventDefault();
+  handleAddPost = (post) => {
     const generatedId = idGenerator();
 
     const newPost = {
@@ -42,19 +72,54 @@ class App extends Component {
     this.setState({ posts });
   };
 
-  render() {
-    const { posts } = this.state;
+  handleToggleImportant = (id) => {
+    this.toggler('important', id);
+  }
 
+  handleToggleLiked = (id) => {
+    this.toggler('like', id);
+  }
+
+  toggler = (key, id) => {
+    const { posts: oldPosts } = this.state;
+    const indexPost = oldPosts.findIndex(post => post.id === id);
+    const oldPost = oldPosts[indexPost];
+    const post = { ...oldPost, [key]: !oldPost[key] };
+    const posts = [
+      ...oldPosts.slice(0, indexPost),
+      post,
+      ...oldPosts.slice(indexPost + 1),
+    ];
+    this.setState({ posts });
+  }
+
+  render() {
+    const { posts, term, filter } = this.state;
+
+    const numberOfLike = posts.filter(post => post.like).length;
+    const numberOfPosts = posts.length;
+    const visiblePosts = this.filterPost(this.searchPosts(posts, term), filter);
     console.info('App render');
 
     return (
       <div className="app">
-        <AppHeader />
+        <AppHeader
+          numberOfLike={numberOfLike}
+          numberOfPosts={numberOfPosts}
+        />
         <div className="search-panel d-flex">
-          <SearchPanel />
-          <PostStatusFilter />
+          <SearchPanel onUpdateSearch={this.hundleUpdateSearch} />
+          <PostStatusFilter
+            filter={filter}
+            hundleFilterSelect={this.hundleFilterSelect}
+          />
         </div>
-        <PostList posts={posts} handleDeletePost={this.handleDeletePost} />
+        <PostList
+          posts={visiblePosts}
+          handleDeletePost={this.handleDeletePost}
+          handleToggleImportant={this.handleToggleImportant}
+          handleToggleLiked={this.handleToggleLiked}
+        />
         <PostAddForm handleAddPost={this.handleAddPost} />
       </div>
     );

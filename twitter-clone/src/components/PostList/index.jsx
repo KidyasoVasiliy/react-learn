@@ -19,16 +19,26 @@ const Li = styled.li`
   margin-top: 10px;
 `;
 
-export const PostList = ({ posts, handleDeletePost }) => {
-  // console.log(posts)
+export const PostList = ({
+  posts,
+  handleDeletePost,
+  handleToggleImportant,
+  handleToggleLiked,
+}) => {
   const elements = posts.map((post) => {
     if (post instanceof Object) {
       const { id, ...itemProps } = post;
       const onDelete = () => handleDeletePost(id);
-
+      const onToggleImportant = () => handleToggleImportant(id);
+      const onToggleLiked = () => handleToggleLiked(id);
       return (
         <Li key={id} className="list-group-item">
-          <PostListItem {...itemProps} handleDeletePost={onDelete} />
+          <PostListItem
+            {...itemProps}
+            handleDeletePost={onDelete}
+            handleToggleImportant={onToggleImportant}
+            handleToggleLiked={onToggleLiked}
+          />
         </Li>
       );
     }

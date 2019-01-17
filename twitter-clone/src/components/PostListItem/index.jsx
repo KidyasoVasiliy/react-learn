@@ -1,67 +1,52 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './style.css';
 
-export class PostListItem extends Component {
-  state = {
-    important: false,
-    like: false,
+export const PostListItem = ({
+  label,
+  important,
+  like,
+  handleDeletePost,
+  handleToggleImportant,
+  handleToggleLiked,
+}) => {
+  const classNames = {
+    default: 'app-list-item d-flex justify-content-between',
+    important: important ? ' important' : '',
+    like: like ? ' like' : '',
   };
 
-  isImportant = () => {
-    this.setState(({ important }) => ({
-      important: !important,
-    }));
-  };
+  const rootClassNames = classNames.default.concat(
+    classNames.important,
+    classNames.like,
+  );
 
-  isLike = () => {
-    this.setState(({ like }) => ({
-      like: !like,
-    }));
-  };
-
-  render() {
-    const { label, handleDeletePost } = this.props;
-    const { important, like } = this.state;
-
-    const classNames = {
-      default: 'app-list-item d-flex justify-content-between',
-      important: important ? ' important' : '',
-      like: like ? ' like' : '',
-    };
-
-    const rootClassNames = classNames.default.concat(
-      classNames.important,
-      classNames.like,
-    );
-
-    return (
-      <div className={rootClassNames}>
-        <span
-          className="app-list-item-label"
-          onMouseDown={this.isLike}
-          role="presentation"
+  return (
+    <div className={rootClassNames}>
+      <span
+        className="app-list-item-label"
+        onMouseDown={handleToggleLiked}
+        role="presentation"
+      >
+        {label}
+      </span>
+      <div className="d-flex justify-content-center align-items-center">
+        <button
+          type="button"
+          className="btn-star btn-sm"
+          onClick={handleToggleImportant}
         >
-          {label}
-        </span>
-        <div className="d-flex justify-content-center align-items-center">
-          <button
-            type="button"
-            className="btn-star btn-sm"
-            onClick={this.isImportant}
-          >
-            <i className="fa fa-star" />
-          </button>
-          <button
-            className="btn-trash btn-sm"
-            type="button"
-            onClick={handleDeletePost}
-          >
-            <i className="fa fa-trash" />
-          </button>
-          <i className="fa fa-heart" />
-        </div>
+          <i className="fa fa-star" />
+        </button>
+        <button
+          className="btn-trash btn-sm"
+          type="button"
+          onClick={handleDeletePost}
+        >
+          <i className="fa fa-trash" />
+        </button>
+        <i className="fa fa-heart" />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};

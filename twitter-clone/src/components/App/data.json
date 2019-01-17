@@ -1,17 +1,20 @@
 [{
     "id": "keys1",
     "label": "A",
-    "important": true
+    "important": true,
+    "like": false
   },
   {
     "id": "keys2",
     "label": "B",
-    "important": false
+    "important": false,
+    "like": false
   },
   {
     "id": "keys3",
     "label": "C",
-    "important": false
+    "important": false,
+    "like": false
   },
   1,
   "null",
