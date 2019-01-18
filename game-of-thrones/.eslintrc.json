@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "rules": {
+      "no-console": 0,
+      "import/prefer-default-export": 0,
+      "arrow-body-style": 0,
+      "react/prop-types": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src/"]
+        }
+      }
+    }
+}
