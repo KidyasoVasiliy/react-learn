@@ -1,8 +1,7 @@
 import React from 'react';
-
 import './style.css';
 
-export const AppHeader = ({
+export const HeaderPosts = ({
   numberOfLike,
   numberOfPosts,
 }) => {

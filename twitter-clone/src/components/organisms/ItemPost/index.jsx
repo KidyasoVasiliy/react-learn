@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Button } from 'components/atoms';
 import './style.css';
 
-export const PostListItem = ({
+export const ItemPost = ({
   label,
   important,
   like,
@@ -31,20 +31,20 @@ export const PostListItem = ({
         {label}
       </span>
       <div className="d-flex justify-content-center align-items-center">
-        <button
+        <Button
           type="button"
           className="btn-star btn-sm"
           onClick={handleToggleImportant}
         >
           <i className="fa fa-star" />
-        </button>
-        <button
+        </Button>
+        <Button
           className="btn-trash btn-sm"
           type="button"
           onClick={handleDeletePost}
         >
           <i className="fa fa-trash" />
-        </button>
+        </Button>
         <i className="fa fa-heart" />
       </div>
     </div>

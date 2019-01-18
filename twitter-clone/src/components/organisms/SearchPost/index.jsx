@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
+import { Input } from 'components/atoms';
 import './style.css';
 
-export class SearchPanel extends Component {
+export class SearchPost extends Component {
   state = {
     term: '',
   }
@@ -16,8 +16,9 @@ export class SearchPanel extends Component {
 
   render() {
     const { term } = this.state;
+
     return (
-      <input
+      <Input
         type="text"
         className="form-control search-input"
         placeholder="Поиск по записям"

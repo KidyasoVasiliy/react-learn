@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { Button, Input, Form } from 'reactstrap';
-
+import { Button, Input } from 'components/atoms';
+import { Form } from 'components/molecules';
 import './style.css';
 
-/**
- * Component used ReactStrap library
- */
-export class PostAddForm extends Component {
+export class AddPost extends Component {
   state = {
     text: '',
   };

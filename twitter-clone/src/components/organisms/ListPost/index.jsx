@@ -1,25 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Item } from 'components/organisms';
+import './style.css';
 
-// eslint-disable-next-line
-import { PostListItem } from 'components';
-
-// import './style.css';
-
-/**
- * Component Styled Components library (CSS in JS)
- */
-const Ul = styled.ul`
-  margin-top: 50px;
-  padding: 0;
-`;
-
-const Li = styled.li`
-  padding: 20px 35px 10px 35px;
-  margin-top: 10px;
-`;
-
-export const PostList = ({
+export const ListPost = ({
   posts,
   handleDeletePost,
   handleToggleImportant,
@@ -32,19 +15,19 @@ export const PostList = ({
       const onToggleImportant = () => handleToggleImportant(id);
       const onToggleLiked = () => handleToggleLiked(id);
       return (
-        <Li key={id} className="list-group-item">
-          <PostListItem
+        <li key={id} className="list-group-item">
+          <Item
             {...itemProps}
             handleDeletePost={onDelete}
             handleToggleImportant={onToggleImportant}
             handleToggleLiked={onToggleLiked}
           />
-        </Li>
+        </li>
       );
     }
 
     return null;
   });
 
-  return <Ul>{elements}</Ul>;
+  return <ul className="app-list">{elements}</ul>;
 };
