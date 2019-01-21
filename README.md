@@ -25,5 +25,11 @@ $ npm start
 $ git checkout twitter-clone
 $ npm start
 ```
+#### Lesson 07
+```sh
+$ git checkout game-of-thrones
+$ npm start
+```
+
 
 
