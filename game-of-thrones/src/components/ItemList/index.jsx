@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { GotService } from 'services/got';
-import { Spinner, Error } from 'components';
+import { GotService } from 'services/got'; // eslint-disable-line
+import { Spinner, Error } from 'components'; // eslint-disable-line
 import './style.css';
 
 export class ItemList extends Component {
@@ -10,78 +10,75 @@ export class ItemList extends Component {
     error: false,
     loading: true,
     message: '',
-    names: null,
-  }
+    charList: null,
+  };
 
   componentDidMount() {
     this.updateChar();
   }
 
-  render() {
-    const { error, loading } = this.state;
-
-    if (loading) return this.renderLoading();
-    if (error) return this.renderError();
-    return this.renderView();
-  }
-
-  renderError() {
+  renderError = () => {
     const { message } = this.state;
+
     return (
       <ul className="item-list list-group">
         <Error message={message} />
       </ul>
     );
   }
-  renderLoading() {
+
+  renderLoading = () => {
     return (
       <ul className="item-list list-group d-flex justify-content-center align-items-center">
         <Spinner />
       </ul>
     );
   }
-  renderView() {
-    const { names } = this.state;
-    return (
-      <ul className="item-list list-group">
-        {names.map((name, index) => (
-          <li key={`${name}-${index}`} className="list-group-item">
-            {name}
-          </li>
-        ))}
-      </ul>
-    );
-  };
 
-  onCharsNamesLoaded = data => {
-    this.setState(data);
-  }
-
-  onError = message => {
+  onError = (message) => {
     this.setState({
       message,
       error: true,
       loading: false,
     });
-  }
+  };
 
-  async getName(id) {
-    const { name } = await this.gotService.getCharacter(id);
-    return name;
-  }
-
-  async updateChar() {
-    const ids = [583, 550, 344];
-    const names = [];
+  updateChar = async () => {
     try {
-      for (const id of ids) {
-        names.push(await this.getName(id));
-      }
-      this.onCharsNamesLoaded({ names, loading: false });
+      const charList = await this.gotService.getAllCharacters();
+      this.setState(() => ({
+        charList,
+        loading: false,
+      }));
     } catch (err) {
       this.onError(err.message);
     }
   }
 
+  renderView() {
+    const { charList } = this.state;
+    const { charSelect } = this.props;
+    return (
+      <ul className="item-list list-group">
+        {charList.map(({ name, url }, index) => (
+          <li
+            key={url}
+            className="list-group-item"
+            onClick={() => charSelect(41 + index)}
+          >
+            {name}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
+  render() {
+    this.foo();
+    const { error, loading } = this.state;
+
+    if (loading) return this.renderLoading();
+    if (error) return this.renderError();
+    return this.renderView();
+  }
 }

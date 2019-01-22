@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { GotService } from 'services/got';
+import { GotService } from 'services/got'; // eslint-disable-line
 import './style.css';
-import { Error, Spinner } from 'components';
+import { Error, Spinner } from 'components'; // eslint-disable-line
 
 export class CharDetails extends Component {
-
   gotService = new GotService();
 
   state = {
     error: false,
     loading: true,
+    message: '',
     name: null,
     gender: null,
     born: null,
@@ -18,32 +18,60 @@ export class CharDetails extends Component {
   }
 
   componentDidMount() {
-    this.updateChar()
+    this.updateChar();
   }
 
-  render() {
-    const { error, loading } = this.state;
-    if (loading) return this.renderSpinner();
-    if (error) return this.renderError();
-
-    return this.renderView();
+  componentDidUpdate(prevProps) {
+    if (prevProps.charId !== this.props.charId) { // eslint-disable-line
+      this.updateChar();
+    }
   }
 
-  renderError() {
+  onCharLoaded = (data) => {
+    this.setState(data);
+  }
+
+  onError = (message) => {
+    this.setState({
+      message,
+      error: true,
+      loading: false,
+    });
+  }
+
+  async updateChar() {
+    const { charId } = this.props;
+    if (!charId) {
+      const message = 'Выберети героя';
+      this.onCharLoaded({ message, loading: false });
+      return;
+    }
+
+    try {
+      const data = await this.gotService.getCharacter(charId);
+      const message = '';
+      this.onCharLoaded({ ...data, message, loading: false });
+    } catch (err) {
+      this.onError(err.message);
+    }
+  }
+
+  renderError = () => {
     const { message } = this.state;
+
     return (
       <div className="char-details rounded">
         <Error message={message} />
       </div>
-    )
+    );
   }
 
-  renderSpinner() {
+  renderSpinner = () => {
     return (
       <div className="char-details rounded d-flex justify-content-center align-items-center">
         <Spinner />
       </div>
-    )
+    );
   }
 
   renderView() {
@@ -80,25 +108,20 @@ export class CharDetails extends Component {
     );
   }
 
-  onCharLoaded = (data) => {
-    this.setState(data);
+  renderMessage = () => {
+    const { message } = this.state;
+    return (
+      <div className="char-details rounded">
+        <h4>{message}</h4>
+      </div>
+    );
   }
 
-  async updateChar() {
-    const id = 583;
-    try {
-      const data = await this.gotService.getCharacter(id);
-      this.onCharLoaded({...data, loading: false });
-    } catch (err) {
-      this.onError(err.message);
-    }
-  }
-
-  onError(message) {
-    this.setState({
-      message,
-      error: true,
-      loading: false,
-    })
+  render() {
+    const { error, loading, message } = this.state;
+    if (loading) return this.renderSpinner();
+    if (error) return this.renderError();
+    if (message) return this.renderMessage();
+    return this.renderView();
   }
 }

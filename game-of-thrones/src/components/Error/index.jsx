@@ -1,13 +1,15 @@
 import React from 'react';
 import './style.css';
 
-export const Error = ({message}) => {
+export const Error = ({ message }) => {
+  const image = `${process.env.PUBLIC_URL}/img/error.jpg`;
   return (
     <div className="error">
       <img
-        src={process.env.PUBLIC_URL + '/img/error.jpg'}
+        src={image}
         alt="error"
-        className="error-img"/>
+        className="error-img"
+      />
       <span>{message}</span>
     </div>
   );

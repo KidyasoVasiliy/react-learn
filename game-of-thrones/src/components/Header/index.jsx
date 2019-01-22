@@ -6,17 +6,17 @@ export const Header = () => {
   return (
     <div className="header-block">
       <h3 className="header-title">
-        <a href="#">Game of Thrones DB</a>
+        <a href="/">Game of Thrones DB</a>
       </h3>
       <ul className="header-links">
         <li className="header-list">
-          <a href="#">Characters</a>
+          <a href="/">Characters</a>
         </li>
         <li className="header-list">
-          <a href="#">Houses</a>
+          <a href="/">Houses</a>
         </li>
         <li className="header-list">
-          <a href="#">Books</a>
+          <a href="/">Books</a>
         </li>
       </ul>
     </div>
