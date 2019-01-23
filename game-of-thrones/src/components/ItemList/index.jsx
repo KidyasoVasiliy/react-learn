@@ -1,38 +1,17 @@
 import React, { Component } from 'react';
-import { GotService } from 'services/got'; // eslint-disable-line
-import { Spinner, Error } from 'components'; // eslint-disable-line
+import { Spinner, Error } from 'components';
 import './style.css';
 
 export class ItemList extends Component {
-  gotService = new GotService();
-
   state = {
     error: false,
     loading: true,
     message: '',
-    charList: null,
+    items: null,
   };
 
   componentDidMount() {
-    this.updateChar();
-  }
-
-  renderError = () => {
-    const { message } = this.state;
-
-    return (
-      <ul className="item-list list-group">
-        <Error message={message} />
-      </ul>
-    );
-  }
-
-  renderLoading = () => {
-    return (
-      <ul className="item-list list-group d-flex justify-content-center align-items-center">
-        <Spinner />
-      </ul>
-    );
+    this.fetchData();
   }
 
   onError = (message) => {
@@ -43,42 +22,41 @@ export class ItemList extends Component {
     });
   };
 
-  updateChar = async () => {
+  fetchData = async () => {
+    const { getData } = this.props;
+
     try {
-      const charList = await this.gotService.getAllCharacters();
-      this.setState(() => ({
-        charList,
+      const items = await getData();
+      this.setState({
+        items,
         loading: false,
-      }));
+      });
     } catch (err) {
       this.onError(err.message);
     }
   }
 
-  renderView() {
-    const { charList } = this.state;
-    const { charSelect } = this.props;
+  render() {
+    const { error, loading, message } = this.state;
+
+    if (loading) return <Spinner />;
+    if (error) return <Error message={message} />;
+
+    const { items } = this.state;
+    const { itemSelect } = this.props;
+
     return (
       <ul className="item-list list-group">
-        {charList.map(({ name, url }, index) => (
+        {items.map(({ name, id }) => (
           <li
-            key={url}
+            key={id}
             className="list-group-item"
-            onClick={() => charSelect(41 + index)}
+            onClick={() => itemSelect(id)}
           >
             {name}
           </li>
         ))}
       </ul>
     );
-  }
-
-  render() {
-    this.foo();
-    const { error, loading } = this.state;
-
-    if (loading) return this.renderLoading();
-    if (error) return this.renderError();
-    return this.renderView();
   }
 }

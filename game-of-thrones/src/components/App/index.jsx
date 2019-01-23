@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
-import { Col, Row, Container } from 'reactstrap';
-import {
-  Header,
-  RandomChar,
-  CharacterPage,
-} from 'components'; // eslint-disable-line
+import { Col, Row, Container, Button } from 'reactstrap';
+import { CharactersPage, BooksPage, HousesPage, RandomRage } from 'pages';
+import { Header } from 'components';
 
 class App extends Component {
   state = {
-    visible: true,
+    visibleRandomChar: true,
   };
 
   toogleContent = () => {
-    const { visible } = this.state;
-    this.setState({ visible: !visible });
-  }
-
+    const { visibleRandomChar } = this.state;
+    this.setState({ visibleRandomChar: !visibleRandomChar });
+  };
 
   render() {
-    const { visible } = this.state;
+    const { visibleRandomChar } = this.state;
+
     return (
       <>
         <Container>
@@ -27,17 +24,17 @@ class App extends Component {
         <Container>
           <Row>
             <Col lg={{ size: 5, offset: 0 }}>
-              {visible && <RandomChar />}
-              <button
-                type="button"
-                className="btn btn-info m-4"
-                onClick={this.toogleContent}
-              >
-                TOOGLE
-              </button>
+              {visibleRandomChar && <RandomRage />}
+              <Button onClick={this.toogleContent} className="mb-4">
+                Скрыть
+              </Button>
             </Col>
           </Row>
-          <CharacterPage />
+          <CharactersPage />
+          <hr />
+          <BooksPage />
+          <hr />
+          <HousesPage />
         </Container>
       </>
     );

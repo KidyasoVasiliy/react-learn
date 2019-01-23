@@ -1,7 +1,8 @@
 export { Header } from './Header';
-export { RandomChar } from './RandomChar';
 export { ItemList } from './ItemList';
-export { CharDetails } from './CharDetails';
+export { ItemDetails } from './ItemDetails';
+
 export { Spinner } from './Spinner';
 export { Error } from './Error';
-export { CharacterPage } from './CharacterPage';
+export { Grid } from './Grid';
+export { Field } from './Field';

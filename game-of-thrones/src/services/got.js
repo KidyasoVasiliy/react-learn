@@ -1,10 +1,11 @@
+import { formatDate } from './formatDate';
 export class GotService {
   constructor() {
-    this._apiBase = 'https://www.anapioficeandfire.com/api'; // eslint-disable-line
+    this._apiBase = 'https://www.anapioficeandfire.com/api';
   }
 
   async getResource(url) {
-    const res = await fetch(`${this._apiBase}${url}`); // eslint-disable-line
+    const res = await fetch(`${this._apiBase}${url}`);
     if (!res.ok) {
       throw new Error(`Could not fetch ${url}, recived ${res.status}`);
     }
@@ -12,45 +13,46 @@ export class GotService {
     return data;
   }
 
-  async getAllCharacters() {
+  getAllCharacters = async () => {
     const res = await this.getResource('/characters?page=5&pageSize=10');
-    return this._transformAllCharacter(res); // eslint-disable-line
+    return this._transformAllCharacter(res);
   }
 
-  async getCharacter(id) {
+  getCharacter = async (id) => {
     const res = await this.getResource(`/characters/${id}`);
-    return this._transformCharacter(res); // eslint-disable-line
+    return this._transformCharacter(res);
   }
 
-  async getAllBooks() {
+  getAllBooks = async () => {
     const res = await this.getResource('/books?page=1&pageSize=100');
-    return res.map(this._transformBook); // eslint-disable-line
+    return res.map(this._transformBook);
   }
 
-  async getBook(id) {
+  getBook = async (id) => {
     const res = await this.getResource(`/books/${id}`);
-    return this._transformBook(res); // eslint-disable-line
+    return this._transformBook(res);
   }
 
-  async getAllHouses() {
-    const res = this.getResource('/houses?page=1&pageSize=100');
-    return res.map(this._transformHouse); // eslint-disable-line
+  getAllHouses = async (id) => {
+    const res = await this.getResource('/houses?page=5&pageSize=10');
+    return res.map(this._transformHouse);
   }
 
-  async getHouse(id) {
-    const res = this.getResource(`/houses/${id}`);
-    return this._transformHouse(res); // eslint-disable-line
+  getHouse = async (id) => {
+    const res = await this.getResource(`/houses/${id}`);
+    return this._transformHouse(res);
   }
 
   _transformAllCharacter = (chars) => {
     const data = chars.map((char) => {
+      const id = this.genereteId(char)
       return {
+        id,
         name: char.name,
         gender: char.gender,
         born: char.born,
         died: char.died,
         culture: char.culture,
-        url: char.url,
       };
     });
 
@@ -69,7 +71,10 @@ export class GotService {
   }
 
   _transformHouse = (house) => {
+    this.assertNotEmpty(house);
+    const id = this.genereteId(house)
     return {
+      id,
       name: house.name,
       region: house.region,
       words: house.words,
@@ -80,23 +85,40 @@ export class GotService {
   }
 
   _transformBook = (book) => {
+    this.assertNotEmpty(book);
+    const id = this.genereteId(book)
     return {
+      id,
       name: book.name,
       numberofPages: book.numberOfPages,
-      publiser: book.publiser,
-      released: book.realised,
+      publisher: book.publisher,
+      released: book.released,
     };
   }
 
+  genereteId = (url) => {
+    const beforeId = url.url.split('/');
+    const newId = beforeId[beforeId.length - 1];
+    return newId
+  }
+
   assertNotEmpty = (data) => {
+
     Object.keys(data)
-      .forEach((elem) => {
+      .forEach((elem) =>  {
         const arr = data;
+        if (elem === 'url') return;
+        if (elem === 'released') {
+          arr[elem]= formatDate(arr[elem]);
+        }
         if (arr[elem].length === 0) {
-          arr[elem] = 'n/a';
+          return arr[elem] = 'n/a';
         }
         if (arr[elem].length > 25) {
-          arr[elem] = arr[elem].slice(0, 25).concat('...');
+          return arr[elem] = arr[elem].slice(0, 25).concat('...');
+        }
+        if (Array.isArray(arr[elem]) && arr[elem][0].length === 0) {
+          return arr[elem] = 'n/a';
         }
       });
   }
