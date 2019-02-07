@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Menu /> Menu have renderer correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Menu />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Link
+          className="nav__link"
+          replace={false}
+          to="/"
+        >
+          Coffee house
+        </Link>,
+        <Link
+          className="nav__link"
+          replace={false}
+          to="/our-coffee"
+        >
+          Our coffee
+        </Link>,
+        <Link
+          className="nav__link"
+          replace={false}
+          to="/for-your-pleasure"
+        >
+          For your pleasure
+        </Link>,
+      ],
+      "className": "nav undefined",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Coffee house",
+          "className": "nav__link",
+          "replace": false,
+          "to": "/",
+        },
+        "ref": null,
+        "rendered": "Coffee house",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Our coffee",
+          "className": "nav__link",
+          "replace": false,
+          "to": "/our-coffee",
+        },
+        "ref": null,
+        "rendered": "Our coffee",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "For your pleasure",
+          "className": "nav__link",
+          "replace": false,
+          "to": "/for-your-pleasure",
+        },
+        "ref": null,
+        "rendered": "For your pleasure",
+        "type": [Function],
+      },
+    ],
+    "type": "nav",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Link
+            className="nav__link"
+            replace={false}
+            to="/"
+          >
+            Coffee house
+          </Link>,
+          <Link
+            className="nav__link"
+            replace={false}
+            to="/our-coffee"
+          >
+            Our coffee
+          </Link>,
+          <Link
+            className="nav__link"
+            replace={false}
+            to="/for-your-pleasure"
+          >
+            For your pleasure
+          </Link>,
+        ],
+        "className": "nav undefined",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Coffee house",
+            "className": "nav__link",
+            "replace": false,
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": "Coffee house",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Our coffee",
+            "className": "nav__link",
+            "replace": false,
+            "to": "/our-coffee",
+          },
+          "ref": null,
+          "rendered": "Our coffee",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "For your pleasure",
+            "className": "nav__link",
+            "replace": false,
+            "to": "/for-your-pleasure",
+          },
+          "ref": null,
+          "rendered": "For your pleasure",
+          "type": [Function],
+        },
+      ],
+      "type": "nav",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

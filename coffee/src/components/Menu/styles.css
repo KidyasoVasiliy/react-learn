@@ -1,0 +1,40 @@
+.nav {
+  position: relative;
+}
+
+.nav::before {
+  content: '';
+  display: block;
+
+  width: 39px;
+  height: 39px;
+
+  position: absolute;
+  bottom: 0;
+  left: -39px;
+
+  mask: url('./logo.svg') no-repeat center;
+}
+
+.nav__link {
+  margin-right: 40px;
+
+  font-size: 12px;
+
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav.white .nav__link {
+  color: #fff;
+}
+.nav.white::before {
+  background-color: #fff;
+}
+
+.nav.black .nav__link {
+  color: #000;
+}
+.nav.black::before {
+  background-color: #000;
+}

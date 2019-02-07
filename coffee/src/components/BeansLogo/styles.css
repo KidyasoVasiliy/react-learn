@@ -1,0 +1,59 @@
+.beans-logo {
+  width: 30px;
+  height: 30px;
+
+  position: relative;
+}
+
+.pseudo {
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+}
+
+.pseudo::before, .pseudo::after {
+  content: '';
+  display: block;
+
+  height: 1px;
+  width: 60px;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pseudo::before {
+  left: calc(-25px + (-60px))
+}
+
+.pseudo::after {
+  right: calc(-25px + (-60px))
+}
+
+.pseudo.white::before, .pseudo.white::after {
+  background-color: #fff;
+}
+.pseudo.black::before, .pseudo.black::after {
+  background-color: #000;
+}
+
+.mask {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 30px;
+  height: 30px;
+
+  mask: url('./beans-logo.svg') no-repeat center;
+}
+
+.mask.black {
+  background-color: #000;
+}
+
+.mask.white {
+  background-color: #fff;
+}
