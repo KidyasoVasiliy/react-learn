@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Actions /> Actions have renderer correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Actions
+    fields={
+      Array [
+        "a",
+        "b",
+        "c",
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="actions__label"
+        >
+          Or filter
+        </div>,
+        <div
+          className="actions__btn-group"
+        >
+          <button
+            className="actions__btn"
+            onClick={[Function]}
+            type="button"
+          >
+            a
+          </button>
+          <button
+            className="actions__btn"
+            onClick={[Function]}
+            type="button"
+          >
+            b
+          </button>
+          <button
+            className="actions__btn"
+            onClick={[Function]}
+            type="button"
+          >
+            c
+          </button>
+        </div>,
+      ],
+      "className": "actions",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Or filter",
+          "className": "actions__label",
+        },
+        "ref": null,
+        "rendered": "Or filter",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <button
+              className="actions__btn"
+              onClick={[Function]}
+              type="button"
+            >
+              a
+            </button>,
+            <button
+              className="actions__btn"
+              onClick={[Function]}
+              type="button"
+            >
+              b
+            </button>,
+            <button
+              className="actions__btn"
+              onClick={[Function]}
+              type="button"
+            >
+              c
+            </button>,
+          ],
+          "className": "actions__btn-group",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "a-0",
+            "nodeType": "host",
+            "props": Object {
+              "children": "a",
+              "className": "actions__btn",
+              "onClick": [Function],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "a",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": "b-1",
+            "nodeType": "host",
+            "props": Object {
+              "children": "b",
+              "className": "actions__btn",
+              "onClick": [Function],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "b",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": "c-2",
+            "nodeType": "host",
+            "props": Object {
+              "children": "c",
+              "className": "actions__btn",
+              "onClick": [Function],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "c",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="actions__label"
+          >
+            Or filter
+          </div>,
+          <div
+            className="actions__btn-group"
+          >
+            <button
+              className="actions__btn"
+              onClick={[Function]}
+              type="button"
+            >
+              a
+            </button>
+            <button
+              className="actions__btn"
+              onClick={[Function]}
+              type="button"
+            >
+              b
+            </button>
+            <button
+              className="actions__btn"
+              onClick={[Function]}
+              type="button"
+            >
+              c
+            </button>
+          </div>,
+        ],
+        "className": "actions",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Or filter",
+            "className": "actions__label",
+          },
+          "ref": null,
+          "rendered": "Or filter",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="actions__btn"
+                onClick={[Function]}
+                type="button"
+              >
+                a
+              </button>,
+              <button
+                className="actions__btn"
+                onClick={[Function]}
+                type="button"
+              >
+                b
+              </button>,
+              <button
+                className="actions__btn"
+                onClick={[Function]}
+                type="button"
+              >
+                c
+              </button>,
+            ],
+            "className": "actions__btn-group",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "a-0",
+              "nodeType": "host",
+              "props": Object {
+                "children": "a",
+                "className": "actions__btn",
+                "onClick": [Function],
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": "a",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": "b-1",
+              "nodeType": "host",
+              "props": Object {
+                "children": "b",
+                "className": "actions__btn",
+                "onClick": [Function],
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": "b",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": "c-2",
+              "nodeType": "host",
+              "props": Object {
+                "children": "c",
+                "className": "actions__btn",
+                "onClick": [Function],
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": "c",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

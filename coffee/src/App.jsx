@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,32 +6,34 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import { Menu, Footer } from './components';
-import { HomePage, OurCoffee, Pleasure } from './containers';
+import { Menu } from './components';
+import { Footer } from './blocks';
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div>
-          <div className="header">
-            <Menu tintColor="white"/>
-          </div>
+import {
+  Home,
+  OurCoffee,
+  Pleasure,
+  CoffeeItem,
+} from './pages';
 
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/our-coffee" exact component={OurCoffee} />
-            {/* TODO: add container on ID */}
-            <Route path="/our-coffee/:id" component={OurCoffee} />
-            <Route path="/for-your-pleasure" component={Pleasure} />
-            <Redirect to="/" exact />
-          </Switch>
+const App = () => (
+  <Router>
+    <div>
+      <div className="header">
+        <Menu tintColor="white"/>
+      </div>
 
-          <Footer />
-        </div>
-      </Router>
-    );
-  }
-}
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/our-coffee" exact component={OurCoffee} />
+        <Route path="/our-coffee/:id" component={CoffeeItem} />
+        <Route path="/for-your-pleasure" component={Pleasure} />
+        <Redirect to="/" exact />
+      </Switch>
+
+      <Footer />
+    </div>
+  </Router>
+);
 
 export default App;

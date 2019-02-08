@@ -1,0 +1,13 @@
+.home__about {
+  padding: 80px 0;
+  max-width: 590px;
+  margin: 0 auto;
+}
+
+.home__goods {
+  text-align: center;
+  min-height: calc(255px + 240px);
+  background: url('../../assets/bg-our-best.jpg') no-repeat center;
+  background-size: cover;
+  padding: 80px 0 100px;
+}

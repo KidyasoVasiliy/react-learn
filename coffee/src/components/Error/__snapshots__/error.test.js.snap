@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing <MaterialBtn /> MaterialBtn have renderer correctly 1`] = `
+exports[`Testing <Error /> Error have renderer correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <MaterialBtn />,
+  Symbol(enzyme.__unrendered__): <Error />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -18,14 +18,27 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": undefined,
-      "className": "button",
-      "onClick": undefined,
-      "type": "button",
+      "children": <p
+        className="error__text"
+      >
+        Произошла ошибка...
+      </p>,
+      "className": "error",
     },
     "ref": null,
-    "rendered": null,
-    "type": "button",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Произошла ошибка...",
+        "className": "error__text",
+      },
+      "ref": null,
+      "rendered": "Произошла ошибка...",
+      "type": "p",
+    },
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -33,14 +46,27 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": undefined,
-        "className": "button",
-        "onClick": undefined,
-        "type": "button",
+        "children": <p
+          className="error__text"
+        >
+          Произошла ошибка...
+        </p>,
+        "className": "error",
       },
       "ref": null,
-      "rendered": null,
-      "type": "button",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Произошла ошибка...",
+          "className": "error__text",
+        },
+        "ref": null,
+        "rendered": "Произошла ошибка...",
+        "type": "p",
+      },
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

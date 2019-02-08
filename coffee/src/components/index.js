@@ -5,6 +5,8 @@ export * from './Title';
 export * from './Paragraph';
 export * from './MaterialBtn';
 export * from './Divider';
-
+export * from './Error';
+export * from './Spinner';
 export * from './CardItem';
-export * from './Footer';
+export * from './Actions';
+export * from './SearchPanel';

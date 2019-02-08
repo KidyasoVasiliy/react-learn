@@ -1,0 +1,397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <LeadBanner /> LeadBanner have renderer correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LeadBanner
+    headings={
+      Array [
+        "h1",
+        "h2",
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="leadBanner__item"
+        >
+          <Title />
+        </div>,
+        <div
+          className="leadBanner__item"
+        >
+          <BeansLogo
+            tintColor="white"
+          />
+        </div>,
+        Array [
+          <div
+            className="leadBanner__item"
+          >
+            <Heading
+              color="white"
+              text="h1"
+            />
+          </div>,
+          <div
+            className="leadBanner__item"
+          >
+            <Heading
+              color="white"
+              text="h2"
+            />
+          </div>,
+        ],
+        <div
+          className="leadBanner__item"
+        >
+          <MaterialBtn
+            transparent={true}
+          />
+        </div>,
+      ],
+      "className": "leadBanner",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <Title />,
+          "className": "leadBanner__item",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "text": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <BeansLogo
+            tintColor="white"
+          />,
+          "className": "leadBanner__item",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "tintColor": "white",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "h1",
+        "nodeType": "host",
+        "props": Object {
+          "children": <Heading
+            color="white"
+            text="h1"
+          />,
+          "className": "leadBanner__item",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "color": "white",
+            "text": "h1",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "h2",
+        "nodeType": "host",
+        "props": Object {
+          "children": <Heading
+            color="white"
+            text="h2"
+          />,
+          "className": "leadBanner__item",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "color": "white",
+            "text": "h2",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <MaterialBtn
+            transparent={true}
+          />,
+          "className": "leadBanner__item",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "handleClick": undefined,
+            "title": undefined,
+            "transparent": true,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="leadBanner__item"
+          >
+            <Title />
+          </div>,
+          <div
+            className="leadBanner__item"
+          >
+            <BeansLogo
+              tintColor="white"
+            />
+          </div>,
+          Array [
+            <div
+              className="leadBanner__item"
+            >
+              <Heading
+                color="white"
+                text="h1"
+              />
+            </div>,
+            <div
+              className="leadBanner__item"
+            >
+              <Heading
+                color="white"
+                text="h2"
+              />
+            </div>,
+          ],
+          <div
+            className="leadBanner__item"
+          >
+            <MaterialBtn
+              transparent={true}
+            />
+          </div>,
+        ],
+        "className": "leadBanner",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <Title />,
+            "className": "leadBanner__item",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "text": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <BeansLogo
+              tintColor="white"
+            />,
+            "className": "leadBanner__item",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "tintColor": "white",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "h1",
+          "nodeType": "host",
+          "props": Object {
+            "children": <Heading
+              color="white"
+              text="h1"
+            />,
+            "className": "leadBanner__item",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "white",
+              "text": "h1",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "h2",
+          "nodeType": "host",
+          "props": Object {
+            "children": <Heading
+              color="white"
+              text="h2"
+            />,
+            "className": "leadBanner__item",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "white",
+              "text": "h2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <MaterialBtn
+              transparent={true}
+            />,
+            "className": "leadBanner__item",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "handleClick": undefined,
+              "title": undefined,
+              "transparent": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
